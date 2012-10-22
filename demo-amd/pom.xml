@@ -1,0 +1,90 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>net.atos.xpg.zuid.html5</groupId>
+	<artifactId>AMD Demo</artifactId>
+	<name>HTML5 XPG - AMD</name>
+	<packaging>war</packaging>
+    <version>1-SNAPSHOT</version>
+
+	<dependencies>
+		<dependency>
+			<groupId>rhino</groupId>
+			<artifactId>js</artifactId>
+			<version>1.7R2</version>
+            <scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>2.15.0</version>
+            <scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.1.2</version>
+            <scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+        <sourceDirectory>src/main/js</sourceDirectory>
+        <scriptSourceDirectory>src/main/js</scriptSourceDirectory>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.6</version>
+				<executions>
+					<execution>
+						<id>optimize</id>
+						<phase>generate-sources</phase>
+						<configuration>
+							<target name="-optimize" description="Combine and minify files.">
+								<echo message="Running optimize." />
+								<property name="requirejs.dir" value="${basedir}/src/main/requirejs" />
+								<property name="start.dir" value="${basedir}/src/main/js" />
+								<java classname="org.mozilla.javascript.tools.shell.Main"
+									failonerror="true">
+									<classpath refid="maven.compile.classpath" />
+									<arg value="${requirejs.dir}/r.js" />
+									<arg value="-o"/>
+									<arg value="name=start" />
+									<arg value="out=${project.build.directory}/${project.build.finalName}/start.js" />
+									<arg value="baseUrl=${start.dir}" />
+									<arg value="paths.jQuery=empty:" />
+									<arg value="paths.jQuery_datatables=empty:" />
+									<arg value="paths.jQuery_validate=empty:" />
+									<arg value="paths.jQuery_validate_additional=empty:" />
+									<arg value="paths.jQuery_ui=empty:" />
+									<arg value="paths.jQuery_ui_datepicker_nl=empty:" />
+									<arg value="paths.log4javascript=empty:" />
+                                    <arg value="paths.jQuery_address=empty:" />
+                                    <arg value="paths.moment=empty:" />
+									<arg value="optimize=uglify" />
+								</java>
+							</target>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <webResources>
+                        <resource>
+                            <!-- this is relative to the pom.xml directory -->
+                            <directory>src/main/resources</directory>
+                        </resource>
+                    </webResources>
+                </configuration>
+            </plugin>
+		</plugins>
+	</build>
+</project>

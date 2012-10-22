@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link type="text/css" href="external/jquery/css/ui-lightness/jquery-ui-1.8.17.custom.css" rel="stylesheet" />
+		<link type="text/css" href="css/xpg.css" rel="stylesheet" />
+		<script data-main="start" src="external/requirejs/require.js"></script>
+        <title>Div Portaal</title>
+	</head>
+	<body>
+		<div id="messageDialog"></div>
+		<section id="top">
+		</section>
+		
+		<section id="leftMenu">
+			
+		</section>
+		
+		<section id="main">
+			<div id="ajaxLoader">
+                <img src="images/ajax-preloader.gif" style="float: left;"/>
+                <span style="float: left; margin-top: 4px; margin-left: 5px;">Bezig met laden...</span>
+			</div>
+            <div id="infoMessageContainer" class="ui-widget" style="display: none;">
+                <div id="infoMessage" class="ui-state-highlight ui-corner-all">
+                    <p>
+                        <span class="ui-icon ui-icon-info"></span>
+                        <span class="infoText"></span>
+                    </p>
+                </div>
+            </div>
+			<div id="componentContainer" style="clear: both;"></div>
+		</section>
+	</body>
+</html>
