@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Demo XPG HTML5</title>
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/dojo/1.8.0/dojo/resources/dojo.css" />
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/dojo/1.8.0/dijit/themes/claro/claro.css" />
+    <link rel="stylesheet" href="/style.css" type="text/css" media="screen" />
+</head>
+<body class="claro">
+    <div class="editor-container">
+        <div data-dojo-type="dijit/Editor" id="editor" class="editor-area"
+             data-dojo-props="onChange:atos.change, onKeyUp:atos.change" height="800px"></div>
+    </div>
+
+    <div class="users" id="users">
+        <h2>Connected users</h2>
+        <ul></ul>
+    </div>
+
+    <div data-dojo-type="dijit/Dialog" data-dojo-id="nameDialog" title="Enter your name">
+        <table class="dijitDialogPaneContentArea">
+            <tr>
+                <td><label for="name">Name:</label></td>
+                <td><input data-dojo-type="dijit/form/TextBox" name="name" id="name"></td>
+            </tr>
+        </table>
+        <div class="dijitDialogPaneActionBar">
+            <button dojoType="dijit.form.Button" type="submit" id="ok" onclick="atos.join();">Join</button>
+        </div>
+    </div>
+
+    <!-- load Dojo -->
+    <script src="//ajax.googleapis.com/ajax/libs/dojo/1.8.0/dojo/dojo.js" data-dojo-config="async: true, parseOnLoad: true"></script>
+    <!-- load socket, served automatically by socket.io serversite-->
+    <script src="/socket.io/socket.io.js"></script>
+    <!-- Include the application -->
+    <script src="application.js"></script>
+</body>
+</html>

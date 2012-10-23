@@ -1,0 +1,47 @@
+body {
+    margin:0;
+    padding:0;
+    background:#EBEBEB;
+    font-family: arial,sans-serif;
+    font-size: 13px;
+}
+
+.editor-container{
+    background:#EBEBEB;
+    padding:10px 0 10px 0;
+    border-top: 1px solid #eee;
+}
+
+.editor-area {
+    background-color:white;
+    margin:0 auto 0 auto;
+    width: 818px;
+    /*height: 4264px;*/
+    /*height: 1056px;*/
+    border:1px solid #ccc;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.users {
+    position: fixed;
+    top:10px;
+    left:0px;
+    border:1px solid #4D90FE;
+    border-width: 1px 1px 1px 0;
+    background: white;
+    padding:5px;
+    width: 130px;
+}
+
+.users h2 {
+    padding:0;
+    margin:0;
+    font-size: 14px;
+    color:#444;
+}
+
+.users ul {
+    padding-left: 10px;
+    margin-left: 10px;
+}
