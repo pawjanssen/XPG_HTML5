@@ -32,6 +32,8 @@ io.sockets.on('connection', function(socket) {
     function log(eventStr) {
         console.log("Event: " + eventStr + " from " + users[socket.id] + " (" + socket.id + ")")
     }
+    log("connection");
+
 
     /**
      * Register a new user and broadcast this happy news

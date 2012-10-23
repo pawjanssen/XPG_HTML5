@@ -21,7 +21,7 @@ require([
      *
      * @type {*}
      */
-    var socket = null;
+    var socket = io.connect();
 
     /**
      * Namespace for the demo app
@@ -35,7 +35,6 @@ require([
      */
     atos.join = function() {
         var input = dom.byId("name");
-        socket = io.connect();
         socket.emit("register", {'name': input.value});
         atos.createListeners();
     };
