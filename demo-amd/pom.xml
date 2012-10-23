@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.atos.xpg.zuid.html5</groupId>
-	<artifactId>AMD Demo</artifactId>
+	<artifactId>amd-demo</artifactId>
 	<name>HTML5 XPG - AMD</name>
 	<packaging>war</packaging>
     <version>1-SNAPSHOT</version>
@@ -62,7 +62,7 @@
 									<arg value="paths.log4javascript=empty:" />
                                     <arg value="paths.jQuery_address=empty:" />
                                     <arg value="paths.moment=empty:" />
-									<arg value="optimize=uglify" />
+									<arg value="optimize=none" />
 								</java>
 							</target>
 						</configuration>

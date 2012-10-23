@@ -29,7 +29,7 @@ public class DMS {
     }
 
     @PUT
-    @Path("/book/{id}")
+    @Path("/document/{id}")
     public Document voegDocumentToe(@PathParam("id") String id, @QueryParam("naam") String naam, @QueryParam("tekst") String tekst) {
         final Document document = new Document(id, naam, tekst);
         this.documentStore.put(id, document);

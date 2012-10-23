@@ -1,0 +1,42 @@
+<style type="text/css">
+    form.overbrengen {
+        margin-top: 20px;
+    }
+</style>
+
+<div id="document_overzicht">
+    <h1>Document overzicht</h1>
+
+    <form class="applicatieForm">
+        <fieldset>
+            <label for="documentnaam">Documentnaam</label>
+            <input id="documentnaam" type="text" name="documentnaam" class="required" />
+        </fieldset>
+
+        <div>
+            <button icon="ui-icon-search" name="zoeken">Zoeken</button> <button icon="ui-icon-cancel" name="wissen">Wissen</button>
+        </div>
+    </form>
+
+    <div class="resultaten">
+        <div class="header_line">
+            <div class="header_text">
+                <span>Documentoverzicht</span>
+            </div>
+        </div>
+
+        <table id="gevonden_documenten" class="dataTabel">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Naam</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+
+        <button id="opnieuw_zoeken" icon="ui-icon-cancel" name="opnieuw">Opnieuw zoeken</button>
+    </div>
+</div>
