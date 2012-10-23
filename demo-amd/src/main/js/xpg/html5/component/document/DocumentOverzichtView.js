@@ -24,13 +24,40 @@ define(["xpg/html5/util/LogUtil", "xpg/html5/xpg-jquery", "xpg/html5/component/C
                 ComponentContainer.instance.setTemplate("document/overzicht.html", function () {
                     self.formContainer = $("#document_overzicht form.applicatieForm");
 
-                    FormUtil.beautifyButtons("#document_overzicht");
+                    self.formValidator = self.formContainer.validate({
+                        rules: {
+                            id: {
+                                required: true
+                            },
+                            naam: {
+                                required: true
+                            }
+                        }
+                    });
+
+                    FormUtil.enableForm(self.formContainer);
+
+                    $("button[name='toevoegen']", self.formContainer).click(function () {
+                        self.voegDocumentToe();
+                    });
 
                     self.log.info("View loaded");
                     onSchermInitializedCallback();
                 });
             };
-        }
+        };
+
+        DocumentOverzichtView.prototype.voegDocumentToe = function() {
+            if (this.formValidator.valid()) {
+
+                var toeTeVoegenDocument = {};
+                toeTeVoegenDocument.id = $("#id").val();
+                toeTeVoegenDocument.naam = $("#naam").val();
+                toeTeVoegenDocument.tekst = $("#tekst").val();
+
+                this.controller.voegZaakToe(toeTeVoegenDocument);
+            }
+        };
 
         DocumentOverzichtView.prototype.renderModel = function() {
             console.log(Model.instance.documenten);

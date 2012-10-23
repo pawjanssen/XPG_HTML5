@@ -9,12 +9,22 @@
 
     <form class="applicatieForm">
         <fieldset>
-            <label for="documentnaam">Documentnaam</label>
-            <input id="documentnaam" type="text" name="documentnaam" class="required" />
+            <label for="id">ID</label>
+            <input id="id" type="text" name="id" class="required" />
+        </fieldset>
+
+        <fieldset>
+            <label for="naam">Documentnaam</label>
+            <input id="naam" type="text" name="naam" class="required" />
+        </fieldset>
+
+        <fieldset>
+            <label for="tekst">Tekst</label>
+            <textarea id="tekst" name="tekst" />
         </fieldset>
 
         <div>
-            <button icon="ui-icon-search" name="zoeken">Zoeken</button> <button icon="ui-icon-cancel" name="wissen">Wissen</button>
+            <button icon="ui-icon-circle-plus" name="toevoegen">Toevoegen</button>
         </div>
     </form>
 
@@ -36,7 +46,5 @@
 
             </tbody>
         </table>
-
-        <button id="opnieuw_zoeken" icon="ui-icon-cancel" name="opnieuw">Opnieuw zoeken</button>
     </div>
 </div>

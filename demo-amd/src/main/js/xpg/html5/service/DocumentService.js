@@ -1,5 +1,6 @@
-define(["xpg/html5//util/LogUtil", "xpg/html5/Model", "xpg/html5/ajax/document/OphalenDocumentenRequest"],
-    function(LogUtil, Model, OphalenDocumentenRequest) {
+define(["xpg/html5//util/LogUtil", "xpg/html5/Model", "xpg/html5/ajax/document/OphalenDocumentenRequest",
+        "xpg/html5/ajax/document/VoegDocumentToeRequest"],
+    function(LogUtil, Model, OphalenDocumentenRequest, VoegDocumentToeRequest) {
 
         /**
          * Client side statusTypeService, verantwoordelijk voor het communiceren met de server
@@ -13,9 +14,9 @@ define(["xpg/html5//util/LogUtil", "xpg/html5/Model", "xpg/html5/ajax/document/O
         };
 
         /**
-         * Haalt de actieve zaaktypes op van de server.
+         * Haalt de documenten op van de server.
          *
-         * @param {function} onRetrieveCompleteCallback - Callback function om aan te roepen als het ophalen van actieve statustypes voltooid is.
+         * @param {function} onRetrieveCompleteCallback - Callback function om aan te roepen als het ophalen van documenten voltooid is.
          */
         DocumentService.prototype.getAllDocumenten = function(onRetrieveCompleteCallback) {
             this.log.info("Ophalen van documenten");
@@ -32,10 +33,27 @@ define(["xpg/html5//util/LogUtil", "xpg/html5/Model", "xpg/html5/ajax/document/O
             ophalenDocumentenRequest.performRequest();
         };
 
+        DocumentService.prototype.voegDocumentToe = function(document, onCompleteCallback) {
+            if (document != undefined) {
+                this.log.info("Het document wordt toegevoegd");
+
+                var self = this;
+                var voegDocumentToeRequest = new VoegDocumentToeRequest(document.id, document, function() {
+                    self.getAllDocumenten(onCompleteCallback);
+                });
+
+                voegDocumentToeRequest.performRequest();
+            } else {
+                this.log.info("Document om toe te voegen niet meegegeven");
+            }
+        };
+
         var documentServiceInstance = new DocumentService();
 
         return {
             'object': DocumentService,
             'instance': documentServiceInstance
         };
+
     });
+

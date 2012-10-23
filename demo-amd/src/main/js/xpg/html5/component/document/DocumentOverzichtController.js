@@ -26,5 +26,13 @@ define(["xpg/html5/util/LogUtil", "xpg/html5/Model", "xpg/html5/component/Generi
         DocumentOverzichtController.prototype = new GenericController();
         DocumentOverzichtController.prototype.constructor = DocumentOverzichtController;
 
+        DocumentOverzichtController.prototype.voegZaakToe = function (document) {
+            var self = this;
+
+            this.documentService.voegDocumentToe(document, function () {
+                self.view.renderModel();
+            });
+        };
+
         return DocumentOverzichtController;
     });
