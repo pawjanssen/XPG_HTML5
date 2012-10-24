@@ -1,0 +1,119 @@
+body {
+    margin: 0px
+}
+
+section {
+	width: 100%;	
+}
+
+h1{
+	font-size:120%;
+}
+
+#top {
+}
+
+#top .title {
+	border: 1px solid black;
+    padding: 5px;
+    color: #FFFFFF;
+    font-weight: bold;
+    background-color: #5877ad;
+}
+
+#top .topMenu {
+	border: 1px solid black;
+    padding: 5px;
+    background-color: #5877ad;
+}
+
+#top .topMenu span {
+	margin-right: 15px;
+    padding: 5px;
+}
+
+#top .topMenu span.active {
+	font-weight: bold;
+}
+
+#top .breadcrumbs {
+	background-color: #2f5c9f;
+	color: #FFFFFF;
+}
+
+#leftMenu {
+    width: 150px;
+    float: left;
+    border-right:1px solid #CCC;
+}
+
+#leftMenu ul {
+	padding:0;
+	margin:0 0 10px 10px;
+}
+
+#leftMenu ul li
+{
+    display: block;
+    padding-left: 7px;
+    color: #0B54D0;
+	list-style-type:none;
+	cursor:pointer;
+	font-size:105%;
+	padding-left:9px;
+}
+
+#leftMenu ul li:hover
+{
+	text-decoration:underline;
+	color:#000;
+	background: url("../images/bullet_active.gif") no-repeat scroll left 1ex transparent;
+}
+
+#leftMenu ul li.active
+{
+	color: #000;
+	font-weight: bold;
+	background: url("../images/bullet_active.gif") no-repeat scroll left 0.9ex transparent;
+}
+
+#main {
+	width: 800px;
+	float: left;
+	margin: 10px;
+}
+
+div.buttonGroup {
+	margin-top: 10px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+#componentContainer {
+    margin-top: 34px;
+}
+
+#infoMessageContainer {
+    float: left;
+}
+
+#infoMessageContainer div.ui-state-highlight {
+    padding: 0 10px;
+}
+
+#infoMessageContainer div.ui-state-highlight p {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    line-height: 16px;
+}
+
+#infoMessageContainer div.ui-state-highlight p * {
+    line-height: 16px;
+}
+
+#infoMessageContainer span.ui-icon {
+    float: left;
+    margin-right: .3em;
+}

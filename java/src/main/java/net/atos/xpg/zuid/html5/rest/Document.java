@@ -6,6 +6,10 @@ public class Document {
     private String naam;
     private String tekst;
 
+    protected Document() {
+
+    }
+
     public Document(final String id, final String naam, final String tekst) {
         this.id = id;
         this.naam = naam;

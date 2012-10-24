@@ -3,10 +3,8 @@ define(["xpg/html5//util/LogUtil", "xpg/html5/Model", "xpg/html5/ajax/document/O
     function(LogUtil, Model, OphalenDocumentenRequest, VoegDocumentToeRequest) {
 
         /**
-         * Client side statusTypeService, verantwoordelijk voor het communiceren met de server
-         * om statustypes op te halen. Aan de client kant het aanspreekpunt om te werken met zaken.
-         *
-         * Zorgt voor updaten van model en caching waar nodig (@todo afterpoc).
+         * Client side DocumentService, verantwoordelijk voor het communiceren met de server
+         * om document op te halen. Aan de client kant het aanspreekpunt om te werken met documenten.
          */
         function DocumentService() {
             this.model = Model.instance;
@@ -38,7 +36,7 @@ define(["xpg/html5//util/LogUtil", "xpg/html5/Model", "xpg/html5/ajax/document/O
                 this.log.info("Het document wordt toegevoegd");
 
                 var self = this;
-                var voegDocumentToeRequest = new VoegDocumentToeRequest(document.id, document, function() {
+                var voegDocumentToeRequest = new VoegDocumentToeRequest(document, function() {
                     self.getAllDocumenten(onCompleteCallback);
                 });
 

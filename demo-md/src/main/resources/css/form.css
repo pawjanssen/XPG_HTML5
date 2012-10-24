@@ -1,0 +1,40 @@
+input, select {
+    border: 1px solid black;
+}
+
+form.applicatieForm fieldset {
+	border: none;
+    /* height: 20px; */
+}
+
+form.applicatieForm fieldset label {
+	display: inline-block;
+	width: 170px;
+    vertical-align: top;
+}
+
+form.applicatieForm fieldset label.auto {
+    width: auto;
+    margin: 0 10px 0 10px;
+}
+
+form.applicatieForm fieldset.subset {
+    margin-left: 30px;
+    height: auto;
+}
+
+form.applicatieForm fieldset.autoheight {
+    height: auto;
+}
+
+form.applicatieForm input[type='text'], form.applicatieForm select, form.applicatieForm textarea {
+    width: 300px;
+}
+
+form.applicatieForm input, form.applicatieForm input.date {
+    width: auto;
+}
+
+form.applicatieForm input.date {
+    width: 81px;
+}

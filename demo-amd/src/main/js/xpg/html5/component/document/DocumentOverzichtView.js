@@ -60,14 +60,13 @@ define(["xpg/html5/util/LogUtil", "xpg/html5/xpg-jquery", "xpg/html5/component/C
         };
 
         DocumentOverzichtView.prototype.renderModel = function() {
-            console.log(Model.instance.documenten);
-
             $("#gevonden_documenten tbody tr").remove();
             var documentenTabel = $("#gevonden_documenten tbody");
             $.each(Model.instance.documenten, function() {
                 var rij = $("<tr></tr>");
                 rij.append("<td>" + this.id + "</td>");
                 rij.append("<td>" + this.naam + "</td>");
+                rij.append("<td>" + this.tekst + "</td>");
 
                 rij.appendTo(documentenTabel);
             });

@@ -1,0 +1,34 @@
+@import url("form.css");
+@import url("layout.css");
+
+* {
+	font-size: 12px;
+	font-family: sans-serif;
+	line-height: 20px;
+}
+
+#leftMenu span {
+	cursor: pointer;
+}
+
+div.header_line {
+    background-color: #5877AD;
+    border: 1px solid black;
+    margin-bottom: 10px;
+    height: 25px;
+}
+
+div.header_text {
+    color: #FFFFFF;
+    padding-top: 3px;
+    padding-left: 5px;
+}
+
+div.header_text + * {
+    padding-top: 25px;
+}
+
+img.ui-datepicker-trigger {
+    cursor: pointer;
+    margin-left: 4px;
+}

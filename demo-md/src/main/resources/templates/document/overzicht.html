@@ -1,0 +1,50 @@
+<style type="text/css">
+    form.overbrengen {
+        margin-top: 20px;
+    }
+</style>
+
+<div id="document_overzicht">
+    <h1>Document overzicht</h1>
+
+    <form class="applicatieForm">
+        <fieldset>
+            <label for="id">ID</label>
+            <input id="id" type="text" name="id" class="required" />
+        </fieldset>
+
+        <fieldset>
+            <label for="naam">Documentnaam</label>
+            <input id="naam" type="text" name="naam" class="required" />
+        </fieldset>
+
+        <fieldset>
+            <label for="tekst">Tekst</label>
+            <textarea id="tekst" name="tekst" />
+        </fieldset>
+
+        <div>
+            <button icon="ui-icon-circle-plus" name="toevoegen">Toevoegen</button>
+        </div>
+    </form>
+
+    <div class="resultaten">
+        <div class="header_line">
+            <div class="header_text">
+                <span>Documentoverzicht</span>
+            </div>
+        </div>
+
+        <table id="gevonden_documenten" class="dataTabel">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Naam</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+</div>
