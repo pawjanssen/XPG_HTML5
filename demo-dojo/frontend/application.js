@@ -33,7 +33,7 @@ require([
     /**
      * A new user joins to edit the document
      */
-    atos.join = function() {
+    atos.join = function(){
         var input = dom.byId("name");
         socket.emit("register", {'name': input.value});
         atos.createListeners();
@@ -42,7 +42,7 @@ require([
     /**
      *  function(){console.log('editor1 onChange handler: ' + arguments[0])}
      */
-    atos.change = function() {
+    atos.change = function(){
         var tmp = dijit.byId("editor");
         var tmp_content = tmp.get("value");
         socket.emit("change", {content: tmp_content});
@@ -51,8 +51,8 @@ require([
     /**
      * Create event listeners on the socket to receive updates
      */
-    atos.createListeners = function() {
-        socket.on('change', function (data) {
+    atos.createListeners = function(){
+        socket.on('change', function (data){
             //console.log(data);
             var tmp = dijit.byId("editor");
             tmp.set("value", data["content"]);
