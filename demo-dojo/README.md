@@ -9,7 +9,6 @@ sudo npm config set registry http://registry.npmjs.org/
 Alternatively:
 http://davidtsadler.com/archives/2012/05/06/installing-node-js-on-ubuntu/
 
-
 Install node packages
 ===========================
 ```
@@ -17,7 +16,6 @@ sudo npm install node-static
 sudo npm install socket.io
 
 ```
-
 
 Set the node.js modules path
 ============================
@@ -28,6 +26,9 @@ source .bashrc
 
 Appfog
 ======
+The app is deployed on Appfog: http://www.appfog.com
+
+Console: https://console.appfog.com/
 App: http://demo-dojo.eu01.aws.af.cm/
 
 Install appfog and deploy the app:
